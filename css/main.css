@@ -1,0 +1,54 @@
+body {
+font-family:LatoLatin,Calibri,sans-serif;
+line-height:0;
+background-color:#000;
+color:#fff;
+margin:0;
+}
+
+#currenttime {
+font-family:DSEG7ClassicMini,LatoLatin,Calibri,sans-serif;
+font-style:italic;
+}
+
+p {
+font-size:30pt;
+}
+
+#controlpanel {
+position:fixed;
+bottom:0;
+left:0;
+width:100%;
+height:auto;
+z-index:99;
+font-size:24pt;
+line-height:1;
+padding:10px;
+}
+
+#controlpanel a {
+text-decoration:none;
+color:#fff;
+}
+
+#header {
+display:flex;
+text-transform:uppercase;
+font-weight:700;
+padding-left:10px;
+padding-right:10px;
+}
+
+#header div {
+width:50%;
+height:auto;
+}
+
+.left {
+text-align:left;
+}
+
+.right {
+text-align:right;
+}

@@ -1,0 +1,34 @@
+#clockbody {
+text-align:center;
+}
+#clockcontainer {
+display:inline-flex;
+}
+#clocksettings {
+  line-height: 1;
+}
+#largeclock {
+font-family:DSEG7Classic,LatoLatin,Calibri,sans-serif;
+font-weight:700;
+font-style:italic;
+font-size:132pt;
+line-height:0;
+}
+#secondclock {
+font-family:DSEG7ClassicMini,LatoLatin,Calibri,sans-serif;
+font-weight:400;
+font-style:italic;
+font-size:60pt;
+line-height:1.2;
+}
+#amtext{
+font-family:DSEG14ClassicMini,LatoLatin,Calibri,sans-serif;
+font-weight:400;
+font-style:italic;
+font-size:60pt;
+}
+#date{
+font-size:54pt;
+font-weight:300;
+}
+#weather{font-size:36pt}

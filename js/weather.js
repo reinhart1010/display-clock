@@ -1,0 +1,6 @@
+function SetWeatherConfig(){
+
+}
+function UpdateWeather(){
+
+}

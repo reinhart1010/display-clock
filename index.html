@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <title>Clock (Alpha)</title>
+    <link rel="stylesheet" href="fonts/fonts.css" type="text/css">
+    <link rel="stylesheet" href="css/main.css" type="text/css">
+    <link rel="stylesheet" href="css/clock.css" type="text/css">
+    <script src="js/moment.js"></script>
+    <script src="js/clock.js"></script>
+    <script src="js/weather.js"></script>
+  </head>
+  <body onLoad="UpdateClock()">
+    <div id="header">
+      <div class="left">
+        <p id="title">Clock</p>
+      </div>
+      <div class="right">
+        <p id="currenttime">88:88</p>
+      </div>
+    </div>
+    <div id="clockbody">
+      <div id="clockcontainer">
+        <p id="largeclock">88:88</p>
+        <p id="secondclock"><span id='amtext'>~~</span><br>:88</p>
+      </div>
+      <p id="date"></p>
+      <p id="weather"></p>
+    </div>
+    <div id="controlpanel"><a href="settings.html">&#9881; Settings</a></div>
+    <script>
+      if('serviceWorker' in navigator) {
+        navigator.serviceWorker
+        .register('/serviceworker.js')
+        .then(function() { console.log("Service Worker Registered"); });
+      }
+    </script>
+  </body>
+</html>

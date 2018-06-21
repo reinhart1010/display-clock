@@ -8,10 +8,6 @@ pages:
   - mv .public public
   artifacts:
     paths:
-    - /
-    - css
-    - fonts
-    - js
+    - public
   only:
   - master
-  baseurl: "/display-clock"

@@ -14,3 +14,4 @@ pages:
     - js
   only:
   - master
+  baseurl: "/display-clock"

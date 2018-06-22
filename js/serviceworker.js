@@ -4,7 +4,7 @@
 "use strict";
 console.log("WORKER: executing.");
 var version = "v0.1::", //App Version
-    offlineFundamentals = ["/", "/css/clock.css", "/css/main.css", "/fonts/fonts.css", "/js/clock.js", "/js/moment.js", "/js/weather.js"];
+    offlineFundamentals = ["index.html", "css/clock.css", "css/main.css", "fonts/fonts.css", "js/clock.js", "js/moment.js", "js/weather.js"];
 self.addEventListener("install", function(e) {
     console.log("WORKER: install event in progress."), e.waitUntil(caches.open(version + "fundamentals").then(function(e) {
         return e.addAll(offlineFundamentals)

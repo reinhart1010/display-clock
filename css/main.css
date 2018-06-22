@@ -11,10 +11,6 @@ font-family:DSEG7ClassicMini,LatoLatin,Calibri,sans-serif;
 font-style:italic;
 }
 
-p {
-font-size:30pt;
-}
-
 #controlpanel {
 position:fixed;
 bottom:0;
@@ -32,12 +28,17 @@ text-decoration:none;
 color:#fff;
 }
 
+#controlpanelspace{
+height:60px
+}
+
 #header {
 display:flex;
 text-transform:uppercase;
 font-weight:700;
 padding-left:10px;
 padding-right:10px;
+font-size:30pt;
 }
 
 #header div {
@@ -53,8 +54,8 @@ text-align:left;
 text-align:right;
 }
 
-@media screen and (max-width:949px), screen and (max-height:699px){
-p{
+@media screen and (max-width:949px), screen and (max-height:649px){
+#header{
 font-size:15pt;
 }
 }

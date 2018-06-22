@@ -21,6 +21,8 @@ z-index:99;
 font-size:24pt;
 line-height:1;
 padding:10px;
+background-color:#000;
+opacity:0.75;
 }
 
 #controlpanel a {

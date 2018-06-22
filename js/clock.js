@@ -26,7 +26,7 @@ var weathercityidc = getCookie('weathercityid');
 function UpdateClock(){
   document.getElementById('date').innerHTML = moment().format('dddd, MMMM Do YYYY');
   document.getElementById('largeclock').innerHTML = moment().format('hh:mm');
-  document.getElementById('secondclock').innerHTML = "<span id='amtext'>" + moment().format('A') + "</span><br>" + moment().format(':ss');
+  document.getElementById('secondclock').innerHTML = "<span id='amtext'>" + moment().format('A') + "</span><i class='owf owf-801-d' id='weathericon'></i><br>" + moment().format(':ss') + "<i class='icon ion-ios-alarm'></i>";
   UpdateMiniClock()
   setTimeout(UpdateClock, 500);
 };

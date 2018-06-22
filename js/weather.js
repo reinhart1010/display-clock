@@ -13,7 +13,7 @@ function UpdateWeather(){
       ParseWeather(jsonData);
     }
   };
-  req.open("GET", "api.openweathermap.org/data/2.5/weather?id=" + weathercityidc + "&units=" + defaultunitsc, true);
+  req.open("GET", "https://api.openweathermap.org/data/2.5/weather?id=" + weathercityidc + "&units=" + defaultunitsc, true);
   //req.open("GET", "assets/testscript/openweathermap-apitest-1.json", true); //Sample API
   req.overrideMimeType("application/json");
   req.send(null);

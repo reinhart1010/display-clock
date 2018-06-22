@@ -11,6 +11,11 @@ font-family:DSEG7ClassicMini,LatoLatin,Calibri,sans-serif;
 font-style:italic;
 }
 
+#currenttime-ampm {
+font-family:DSEG14ClassicMini,LatoLatin,Calibri,sans-serif;
+font-style:italic;
+}
+
 #controlpanel {
 position:fixed;
 bottom:0;

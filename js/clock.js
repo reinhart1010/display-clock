@@ -1,39 +1,52 @@
 /* Define variables from cookies */
 var foregroundcolorc = getCookie("com.reinhart.display.clock.foregroundcolor");
 var backgroundcolorc = getCookie("com.reinhart.display.clock.backgroundcolor");
-var timeformatc = getCookie("com.reinhart.display.timeformat");
+var timeformatcf = GetTimeFormat();
 
-/* Define variables from IDs */
-var dateid = document.getElementById('date');
-var largeclockid = document.getElementById('largeclock');
-var amtextid = document.getElementById('amtext');
-var secondclockid = document.getElementById('secondclock');
-var clockbodyid = document.getElementById('clockbody');
+/* Clock start script */
+function StartClock(){
+  ApplyClockSettings();
+  LoadClockSettings();
+  UpdateClock();
+  UpdateWeather();
+};
 
-/* Determine time format */
-function GetTimeFormat(){
+function GetHourFormat(){
+  if(timeformatcf = "24h"){
+    return moment().format('hh:mm');
+  } else if(timeformatcf = "12h"){
+    return moment().format('HH:mm');
+  };
+};
+
+function GetAmPmFormat(){
+  if(timeformatcf = "24h"){
+    return moment().format('a');
+  } else if(timeformatcf = "12h"){
+    return '&nbsp;&nbsp;&nbsp;&nbsp;';
+  };
 };
 
 /* Update clock values */
 function UpdateClock(){
-  dateid.innerHTML = moment().format('dddd, MMMM Do YYYY');
-  secondclockid.innerHTML = moment().format('ss');
-  if(timeformatc = "12h"){
-    largeclockid.innerHTML = moment().format('hh:mm');
-    amtextid.innerHTML = moment().format('A');
-  } else if(timeformatc = "24h"){
-    largeclockid.innerHTML = moment().format('HH:mm');
-    amtextid.innerHTML = "&nbsp;&nbsp;&nbsp;&nbsp;";
-  };
+  document.getElementById('date').innerHTML = moment().format('dddd, MMMM Do YYYY');
+  document.getElementById('secondclock').innerHTML = moment().format('ss');
+  document.getElementById('largeclock').innerHTML = GetHourFormat();
+  document.getElementById('amtext').innerHTML = GetAmPmFormat();
   UpdateCurrentTime();
-
   setTimeout(UpdateClock, 500);
 };
 
 /* Apply clock settings */
 function ApplyClockSettings(){
-  clockbodyid.style.color = foregroundcolorc;
-  clockbodyid.style.backgroundColor = backgroundcolorc;
+  var clockbodybackground = document.getElementById('clockbody').style.backgroundColor;
+  var clockbodycolor = document.getElementById('clockbody').style.color;
+  if(foregroundcolorc != null){
+    clockbodycolor = foregroundcolorc;
+  } else {clockbodycolor = "#fff"};
+  if(backgroundcolorc != null){
+    clockbodybackground = backgroundcolorc;
+  } else {clockbodybackground = "#000"};
 };
 
 /* Load clock settings */

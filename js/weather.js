@@ -18,6 +18,15 @@ function UpdateWeather(){
   req.overrideMimeType("application/json");
   req.send(null);
   setTimeout(UpdateWeather, weatherrefreshtimec);
+  var j;
+  var tempsymbol = document.getElementById("tempsymbol");
+  for (j = 0; j <tempsymbol.length; j++){
+    if(defaultunitsc = ""){
+      tempsymbol.options[tempsymbol.j].value = "K";
+    } else {
+      tempsymbol.options[tempsymbol.j].value = "&deg;";
+    };
+  };
 };
 
 /* Parse current weather to clock */

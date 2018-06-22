@@ -2,6 +2,7 @@
 var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
 var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
 var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
+var defaultunitsc = getCookie("com.reinhart.display.defaultunits")
 
 /* Request JSON file from OpenWeatherMap API */
 function UpdateWeather(){
@@ -12,7 +13,7 @@ function UpdateWeather(){
       ParseWeather(jsonData);
     }
   };
-  req.open("GET", "api.openweathermap.org/data/2.5/weather?id=" + weathercityidc + "&units=" + weatherunitsc, true);
+  req.open("GET", "api.openweathermap.org/data/2.5/weather?id=" + weathercityidc + "&units=" + defaultrunitsc, true);
   //req.open("GET", "assets/testscript/openweathermap-apitest-1.json", true); //Sample API
   req.overrideMimeType("application/json");
   req.send(null);

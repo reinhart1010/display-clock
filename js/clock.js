@@ -1,7 +1,8 @@
-/* Define vriables from cookies */
+/* Define variables from cookies */
 var foregroundcolorc = getCookie("com.reinhart.display.clock.foregroundcolor");
 var backgroundcolorc = getCookie("com.reinhart.display.clock.backgroundcolor");
 
+/* Update clock values */
 function UpdateClock(){
   var colondeterminer = moment().second() % 2;
   document.getElementById('date').innerHTML = moment().format('dddd, MMMM Do YYYY');
@@ -12,10 +13,11 @@ function UpdateClock(){
   UpdateCurrentTime();
   setTimeout(UpdateClock, 500);
 };
+
 function LoadClockSettings(){
-  if(timeformatc != ""){
-    timeformat.value = timeformatc
-  };
+  var clockbody = document.getElementById('clockbody');
+  clockbody.style.color = foregroundcolorc;
+  clockbody.style.backgroundColor = backgroundcolorc;
 };
 function SaveClockSettings(){
   var foregroundcolor = document.getElementById('foregroundcolor').value;

@@ -30,10 +30,6 @@ function UpdateClock(){
   UpdateMiniClock()
   setTimeout(UpdateClock, 500);
 };
-function UpdateMiniClock(){
-  document.getElementById('currenttime').innerHTML = moment().format('HH:mm');
-  setTimeout(UpdateMiniClock, 500);
-};
 function LoadSettings(){
   if(ampmc != ""){
     ampm.value = ampmc

@@ -32,7 +32,4 @@ function UpdateWeather(){
 
 /* Save weather settings to cookie */
 function SaveWeatherSettings(){
-  setCookie("com.reinhart.display.weather.weatherapikey",weatherapikey,100000);
-  setCookie("com.reinhart.display.weather.weathercityid",weathercityid,100000);
-  setCookie("com.reinhart.display.weather.weatherrefreshtime",weatherrefreshtime,100000);
 };

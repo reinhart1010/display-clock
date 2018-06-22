@@ -25,9 +25,12 @@ function SaveClockSettings(){
   var weathercityid = document.getElementById('weathercityid').value;
   var weatherrefreshtime = document.getElementById('weatherrefreshtime').value;
   var defaultunits = document.getElementById('defaultunits').value;
-  setCookie("com.reinhart.display.clock.foregroundcolor",foregroundcolor,100000);
-  setCookie("com.reinhart.display.clock.backgroundcolor",backgroundcolor,100000);
-  SaveWeatherSettings();
-  SaveGlobalSettings();
+  setCookie("com.reinhart.display.clock.foregroundcolor",foregroundcolor,730);
+  setCookie("com.reinhart.display.clock.backgroundcolor",backgroundcolor,730);
+  setCookie("com.reinhart.display.timeformat",backgroundcolor,730);
+  setCookie("com.reinhart.display.weather.weatherapikey",weatherapikey,730);
+  setCookie("com.reinhart.display.weather.weathercityid",weathercityid,730);
+  setCookie("com.reinhart.display.weather.weatherrefreshtime",weatherrefreshtime,730);
+  setCookie("com.reinhart.display.defaultunits",defaultunits,730);
   //LoadClockSettings();
 };

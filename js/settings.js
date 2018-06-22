@@ -22,9 +22,3 @@ function getCookie(cname) {
     }
     return "";
 };
-
-/* Save global cookies */
-function SaveGlobalSettings(){
-setCookie("com.reinhart.display.timeformat",backgroundcolor,100000);
-setCookie("com.reinhart.display.defaultunits",defaultunits,100000);
-}

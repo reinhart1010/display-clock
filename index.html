@@ -26,7 +26,7 @@
     <script src="js/clock.js"></script>
     <script src="js/weather.js"></script>
   </head>
-  <body onLoad="UpdateClock();UpdateWeather()">
+  <body onLoad="UpdateClock();UpdateWeather();ApplyClockSettings()">
     <div id="header">
       <div class="left">
         <p id="title">Clock</p>
@@ -89,7 +89,7 @@
       </form>
     </div>
     <div id="controlpanelspace"></div>
-    <div id="controlpanel"><a href="settings.html"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick="screenfull.toggle()"><i class='icon ion-ios-qr-scanner'></i> Toggle Fullscreen</a></div>
+    <div id="controlpanel"><a onClick="ClockSettings()"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick="screenfull.toggle()"><i class='icon ion-ios-qr-scanner'></i> Fullscreen</a></div>
     <script>
       if('serviceWorker' in navigator) {
         navigator.serviceWorker

@@ -37,11 +37,13 @@ font-size:60pt;
 #date {
 font-size:54pt;
 font-weight:300;
+line-height:1;
 }
 
 #weather {
 font-size:36pt;
 font-weight:400;
+line-height:1;
 }
 
 #weather b {

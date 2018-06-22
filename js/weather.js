@@ -18,22 +18,23 @@ function UpdateWeather(){
   req.overrideMimeType("application/json");
   req.send(null);
   setTimeout(UpdateWeather, weatherrefreshtimec);
-  var j;
-  var tempsymbol = document.getElementById("tempsymbol");
-  for (j = 0; j <tempsymbol.length; j++){
-    if(defaultunitsc = ""){
-      tempsymbol.options[tempsymbol.j].value = "K";
-    } else {
-      tempsymbol.options[tempsymbol.j].value = "&deg;";
-    };
-  };
+};
+
+/* Determine weather unit symbol */
+function FindTemperatureSymbol(){
+  if (defaultunitsc = "imperial"){
+    return "&deg;F";
+  } else if (defaultunitsc = "metric"){
+    return "&deg;C";
+  } else {return "K";};
 };
 
 /* Parse current weather to clock */
 function ParseWeather(json){
+  var tempsymbol = FindTemperatureSymbol();
   document.getElementById('weathercity').innerHTML = json.name + ", " + json.sys.country;
-  document.getElementById('currenttemp').innerHTML = json.main.temp.toFixed(0);;
-  document.getElementById('mintemp').innerHTML = json.main.temp_min.toFixed(0);;
-  document.getElementById('maxtemp').innerHTML = json.main.temp_max.toFixed(0);;
+  document.getElementById('currenttemp').innerHTML = json.main.temp.toFixed(0) + tempsymbol;
+  document.getElementById('mintemp').innerHTML = json.main.temp_min.toFixed(0) + tempsymbol;
+  document.getElementById('maxtemp').innerHTML = json.main.temp_max.toFixed(0) + tempsymbol;
   document.getElementById('weathericon').className = "owf owf-" + json.weather[0].id + "-" + json.weather[0].icon.slice(-1);
 };

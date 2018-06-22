@@ -2,10 +2,24 @@
 <html>
   <head>
     <title>Clock (Alpha)</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/appicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/appicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/appicons/favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="mask-icon" href="/assets/appicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="/assets/appicons/favicon.ico">
+    <meta name="apple-mobile-web-app-title" content="Clock">
+    <meta name="application-name" content="Clock">
+    <meta name="msapplication-TileColor" content="#222222">
+    <meta name="msapplication-config" content="/assets/appicons/browserconfig.xml">
+    <meta name="theme-color" content="#000000">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/clock.css" type="text/css">
     <script src="js/moment.js"></script>
+    <script src="js/screenfull.js"></script>
+    <script src="js/main.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/weather.js"></script>
   </head>
@@ -26,11 +40,11 @@
       <p id="date"></p>
       <p id="weather"></p>
     </div>
-    <div id="controlpanel"><a href="settings.html">&#9881; Settings</a></div>
+    <div id="controlpanel"><a href="settings.html">&#9881; Settings</a> | <a onClick="screenfull.toggle()">Toggle Fullscreen</a></div>
     <script>
       if('serviceWorker' in navigator) {
         navigator.serviceWorker
-        .register('/serviceworker.js')
+        .register('/js/serviceworker.js')
         .then(function() { console.log("Service Worker Registered"); });
       }
     </script>

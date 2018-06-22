@@ -48,7 +48,7 @@ font-weight:400;
 font-weight:800;
 }
 
-@media screen and (max-width:949px) and (max-height:699px){
+@media screen and (max-width:949px), screen and (max-height:649px){
 #largeclock {
 font-size:66pt;
 }

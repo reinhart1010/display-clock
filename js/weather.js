@@ -17,7 +17,7 @@ function UpdateWeather(){
   //req.open("GET", "assets/testscript/openweathermap-apitest-1.json", true); //Sample API
   req.overrideMimeType("application/json");
   req.send(null);
-  setTimeout(GetWeather, weatherrefreshtimec);
+  setTimeout(UpdateWeather, weatherrefreshtimec);
 };
 
 /* Parse current weather to clock */

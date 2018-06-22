@@ -41,7 +41,7 @@
         <p id="smallclock"><span id="amtext">~~</span> <i class='' id='weathericon'></i><br>:<span id="secondclock">88</span> <i class='' id='alarmicon'></i></p>
       </div>
       <p id="date"></p>
-      <p id="weather"><b id="weathercity">Unknown Location</b> &bull; <span id="weatherstatus">Make sure weather is</span> <span id="currenttemp">set</span> (<span id="mintemp">see Settings</span>&ndash;<span id="maxtemp">Weather</span>)</p>
+      <p id="weather"><b id="weathercity">Loading</b> &bull; <span id="weatherstatus">Please</span> <span id="currenttemp">Wait...</span> (<span id="mintemp">Check Settings</span>&ndash;<span id="maxtemp">Weather</span>)</p>
     </div>
     <div id="clocksettings">
       <form>
@@ -88,8 +88,16 @@
         <p>This webapp uses web browser cookies to store and load your settings across Reinhart websites, which we do not deliver to any third parties.<br>While we currently have not implemented our Cookie Policy for this webapp yet, you may evaluate our source code on <a href="https://github.com/reinhart1010/display-clock">GitHub</a> and <a href="https://gitlab.com/reinhart1010/display-clock">GitLab</a> to ensure the fairness of our cookie usage.</p>
       </form>
     </div>
+    <div id="clockabout">
+      <h1>Clock</h1>
+      <h2>Version 0.5</h2>
+      <b>Copyright &copy; 2018 Reinhart Previano Koentjoro</b>
+      <p>View Source Code on <a href="https://github.com/reinhart1010/display-clock">GitHub</a> | <a href="https://gitlab.com/reinhart1010/display-clock">GitLab</a></p>
+      <p>This project is freely available under the MIT License.</p>
+      <p><input type="button" onClick="CurrentURL()" value="Reveal App Host URL"></p>
+    </div>
     <div id="controlpanelspace"></div>
-    <div id="controlpanel"><a onClick="ClockSettings()"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick="screenfull.toggle()"><i class='icon ion-ios-qr-scanner'></i> Fullscreen</a></div>
+    <div id="controlpanel"><a onClick="ClockSettings('clockbody')"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick='screenfull.toggle()'><i class='icon ion-ios-qr-scanner'></i> Fullscreen</a></div>
     <script>
       if('serviceWorker' in navigator) {
         navigator.serviceWorker

@@ -1,3 +1,10 @@
+#amtext {
+font-family:DSEG14ClassicMini,LatoLatin,Calibri,sans-serif;
+font-weight:400;
+font-style:italic;
+font-size:60pt;
+}
+
 #clockbody {
 text-align:center;
 }
@@ -6,8 +13,9 @@ text-align:center;
 display:inline-flex;
 }
 
-#clocksettings {
+#clocksettings, #clockabout {
 line-height:1;
+display:none;
 }
 
 #largeclock {
@@ -25,13 +33,6 @@ font-style:italic;
 font-size:60pt;
 line-height:1.2;
 text-align:left;
-}
-
-#amtext {
-font-family:DSEG14ClassicMini,LatoLatin,Calibri,sans-serif;
-font-weight:400;
-font-style:italic;
-font-size:60pt;
 }
 
 #date {

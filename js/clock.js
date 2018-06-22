@@ -1,4 +1,4 @@
-/* Define variables from cookies */
+/* Define variables from cookies, functions and IDs */
 var foregroundcolorc = getCookie("com.reinhart.display.clock.foregroundcolor");
 var backgroundcolorc = getCookie("com.reinhart.display.clock.backgroundcolor");
 var timeformatcf = GetTimeFormat();
@@ -74,4 +74,26 @@ function SaveClockSettings(){
   setCookie("com.reinhart.display.weather.weatherrefreshtime",weatherrefreshtime,730);
   setCookie("com.reinhart.display.defaultunits",defaultunits,730);
   ApplyClockSettings();
+};
+
+var homecpanel = "<a onClick=\"ClockSettings('clockhome')\"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick='screenfull.toggle()'><i class='icon ion-ios-qr-scanner'></i> Fullscreen</a>";
+var settingscpanel = "<a onClick=\"ClockHome('clocksettings')\"><i class='icon ion-ios-arrow-back'></i> Back</a> | <a onClick=\"ClockAbout('clocksettings')\"><i class='icon ion-ios-information-circle-outline'></i> About</a>";
+var aboutcpanel = "<a onClick=\"ClockSettings('clockabout')\"><i class='icon ion-ios-arrow-back'></i> Back</a>";
+
+function ClockHome(hideid){
+  TogglePage(hideid,"clockbody");
+  document.getElementById('controlpanel').innerHTML = homecpanel;
+  document.getElementById("title").innerHTML = "Clock"
+};
+
+function ClockSettings(hideid){
+  TogglePage(hideid,"clocksettings");
+  document.getElementById('controlpanel').innerHTML = settingscpanel;
+  document.getElementById("title").innerHTML = "Settings"
+};
+
+function ClockAbout(hideid){
+  TogglePage(hideid,"clockabout");
+  document.getElementById('controlpanel').innerHTML = aboutcpanel;
+  document.getElementById("title").innerHTML = "About"
 };

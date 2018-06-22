@@ -26,8 +26,7 @@ z-index:99;
 font-size:24pt;
 line-height:1;
 padding:10px;
-background-color:#000;
-opacity:0.75;
+background-color:rgba(0,0,0,0.75);
 }
 
 #controlpanel a {
@@ -41,11 +40,15 @@ height:60px
 
 #header {
 display:flex;
+position:sticky;
+z-index: 99;
+top:0;
 text-transform:uppercase;
 font-weight:700;
 padding-left:10px;
 padding-right:10px;
 font-size:30pt;
+background-color:rgba(0,0,0,0.75);
 }
 
 #header div {

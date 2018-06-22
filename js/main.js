@@ -1,4 +1,4 @@
-function UpdateMiniClock(){
+function UpdateCurrentTime(){
   document.getElementById('currenttime').innerHTML = moment().format('HH:mm');
-  setTimeout(UpdateMiniClock, 500);
+  setTimeout(UpdateCurrentTime, 500);
 };

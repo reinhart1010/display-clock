@@ -1,42 +1,33 @@
-function setCookie(cname, cvalue, exdays) {
-    var d = new Date();
-    d.setTime(d.getTime() + (exdays*24*60*60*1000 ));
-    var expires = "expires="+ d.toUTCString();
-    document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-};
-function getCookie(cname) {
-    var name = cname + "=";
-    var decodedCookie = decodeURIComponent(document.cookie);
-    var ca = decodedCookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            return c.substring(name.length, c.length);
-        }
-    }
-    return "";
-};
-var weatherapikey = document.getElementById('weatherapikey').value;
-var weathercityid = document.getElementById('weathercityid').value;
-var weatherapikeyc = getCookie('weatherapikey');
-var weathercityidc = getCookie('weathercityid');
+/* Define vriables from cookies */
+var foregroundcolorc = getCookie("com.reinhart.display.clock.foregroundcolor");
+var backgroundcolorc = getCookie("com.reinhart.display.clock.backgroundcolor");
+
 function UpdateClock(){
+  var colondeterminer = moment().second() % 2;
   document.getElementById('date').innerHTML = moment().format('dddd, MMMM Do YYYY');
   document.getElementById('largeclock').innerHTML = moment().format('hh:mm');
-  document.getElementById('secondclock').innerHTML = "<span id='amtext'>" + moment().format('A') + "</span><i class='owf owf-801-d' id='weathericon'></i><br>" + moment().format(':ss') + "<i class='icon ion-ios-alarm'></i>";
-  UpdateMiniClock()
+  document.getElementById('amtext').innerHTML = moment().format('A')
+  document.getElementById('secondclock').innerHTML = moment().format('ss');
+
+  UpdateCurrentTime();
   setTimeout(UpdateClock, 500);
 };
-function LoadSettings(){
-  if(ampmc != ""){
-    ampm.value = ampmc
+function LoadClockSettings(){
+  if(timeformatc != ""){
+    timeformat.value = timeformatc
   };
-
 };
-function SaveSettings(){
-  setCookie("weatherapikey",weatherapikey,100000);
-  setCookie("weathercityid",weathercityid,100000);
+function SaveClockSettings(){
+  var foregroundcolor = document.getElementById('foregroundcolor').value;
+  var backgroundcolor = document.getElementById('backgroundcolor').value;
+  var timeformat = document.getElementById('timeformat').value;
+  var weatherapikey = document.getElementById('weatherapikey').value;
+  var weathercityid = document.getElementById('weathercityid').value;
+  var weatherrefreshtime = document.getElementById('weatherrefreshtime').value;
+  var defaultunits = document.getElementById('defaultunits').value;
+  setCookie("com.reinhart.display.clock.foregroundcolor",foregroundcolor,100000);
+  setCookie("com.reinhart.display.clock.backgroundcolor",backgroundcolor,100000);
+  SaveWeatherSettings();
+  SaveGlobalSettings();
+  //LoadClockSettings();
 };

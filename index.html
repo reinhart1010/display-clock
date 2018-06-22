@@ -16,10 +16,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="fonts/fonts.css" type="text/css">
     <link rel="stylesheet" href="css/owfont.css" type="text/css">
+    <link rel="stylesheet" href="css/ionicons.css" type="text/css">
     <link rel="stylesheet" href="css/main.css" type="text/css">
     <link rel="stylesheet" href="css/clock.css" type="text/css">
     <script src="js/moment.js"></script>
     <script src="js/screenfull.js"></script>
+    <script src="js/settings.js"></script>
     <script src="js/main.js"></script>
     <script src="js/clock.js"></script>
     <script src="js/weather.js"></script>
@@ -36,12 +38,57 @@
     <div id="clockbody">
       <div id="clockcontainer">
         <p id="largeclock">88:88</p>
-        <p id="secondclock"><span id='amtext'>~~</span><br>:88</p>
+        <p id="smallclock"><span id="amtext">~~</span> <i class='owf owf-801-d' id='weathericon'></i><br>:<span id="secondclock">88</span> <i class='icon ion-ios-alarm'></i></p>
       </div>
       <p id="date"></p>
-      <p id="weather"></p>
+      <p id="weather"><b id="weathercity">Jakarta</b> &bull; <span id="weatherstatus">Clear</span> <span id="currenttemp">23</span><span class="tempsymbol">&deg;</span> (<span id="mintemp">12</span><span class="tempsymbol">&deg;</span>&ndash;<span id="maxtemp">34</span><span class="tempsymbol">&deg;</span>)</p>
     </div>
-    <div id="controlpanel"><a href="settings.html">&#9881; Settings</a> | <a onClick="screenfull.toggle()">Toggle Fullscreen</a></div>
+    <div id="clocksettings">
+      <form>
+        <h1>Clock and Time</h1>
+        <h2>Clock Style</h2>
+        <label for="foregroundcolor">Foreground Color:</label>
+        <input type="text" name="foregroundcolor" id="foregroundcolor"><br>
+        <label for="backgroundcolor">Background Color:</label>
+        <input type="text" name="backgroundcolor" id="backgroundcolor">
+        <h2>Time Format</h2>
+        <label for="timeformat">Time Format</label>
+        <select name="timeformat" id="timeformat">
+          <option value="12h">12 Hour (e.g. 01:00 PM)</option>
+          <option value="24h">24 Hour (e.g. 13:00)</option>
+        </select>
+        <h1>Weather</h1>
+        <h2>Weather Access</h2>
+        <label for="weatherapikey">OpenWeatherMap API Key:</label>
+        <input type="text" name="weatherapikey" id="weatherapikey"><br>
+        <label for="weathercityid">OpenWeatherMap City ID:</label>
+        <input type="text" name="weathercityid" id="weathercityid"><br>
+        <label for="weathercityid">Refresh Weather Every:</label>
+        <select name="weatherrefreshtime" id="weatherrefreshtime">
+          <option value="0">No Refresh</option>
+          <option value="10">10 Minutes</option>
+          <option value="15">15 Minutes</option>
+          <option value="30">30 Minutes</option>
+          <option value="60">1 Hour</option>
+          <option value="120">2 Hours</option>
+          <option value="180">3 Hours</option>
+          <option value="360">6 Hours</option>
+          <option value="720">12 Hours</option>
+          <option value="1440">1 Day</option>
+        </select>
+        <h2>Weather Formats</h2>
+        <label for="defaultunits">Default Weather Units:</label>
+        <select name="defaultunits" id="defaultunits">
+          <option value="">Standard: Kelvin, meter/second</option>
+          <option value="metric">Metric: Celcius, meter/second</option>
+          <option value="imperial">Imperial: Fahrenheit, miles/hour</option>
+        </select><br>
+        <input type="button" onClick="SaveClockSettings()" value="Save"><br>
+        <p>This webapp uses web browser cookies to store and load your settings across Reinhart websites, which we do not deliver to any third parties.<br>While we currently have not implemented our Cookie Policy for this webapp yet, you may evaluate our source code on <a href="https://github.com/reinhart1010/display-clock">GitHub</a> and <a href="https://gitlab.com/reinhart1010/display-clock">GitLab</a> to ensure the fairness of our cookie usage.</p>
+      </form>
+    </div>
+    <div id="controlpanelspace"></div>
+    <div id="controlpanel"><a href="settings.html"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick="screenfull.toggle()"><i class='icon ion-ios-qr-scanner'></i> Toggle Fullscreen</a></div>
     <script>
       if('serviceWorker' in navigator) {
         navigator.serviceWorker

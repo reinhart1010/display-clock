@@ -6,6 +6,14 @@ var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
 var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
 var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
 var defaultunitsc = getCookie("com.reinhart.display.defaultunits");
+var foregroundcolor = document.getElementById('foregroundcolor').value;
+var backgroundcolor = document.getElementById('backgroundcolor').value;
+var weatherapikey = document.getElementById('weatherapikey').value;
+var weathercityid = document.getElementById('weathercityid').value;
+var weatherrefreshtime = document.getElementById('weatherrefreshtime').value;
+var defaultunits = document.getElementById('defaultunits').value;
+var options = [foregroundcolor, backgroundcolor, timeformat, weatherapikey, weathercityid, weatherrefreshtime, defaultunits]
+var optionsc = [foregroundcolorc, backgroundcolorc, timeformatc, weatherapikeyc, weathercityidc, weatherrefreshtimec, defaultunitsc]
 
 /* Clock start script */
 function StartClock(){
@@ -55,15 +63,6 @@ function ApplyClockSettings(){
 
 /* Load clock settings */
 function LoadClockSettings(){
-  var foregroundcolor = document.getElementById('foregroundcolor').value;
-  var backgroundcolor = document.getElementById('backgroundcolor').value;
-  var timeformat = document.getElementById('timeformat').value;
-  var weatherapikey = document.getElementById('weatherapikey').value;
-  var weathercityid = document.getElementById('weathercityid').value;
-  var weatherrefreshtime = document.getElementById('weatherrefreshtime').value;
-  var defaultunits = document.getElementById('defaultunits').value;
-  var options = [foregroundcolor, backgroundcolor, timeformat, weatherapikey, weathercityid, weatherrefreshtime, defaultunits]
-  var optionsc = [foregroundcolorc, backgroundcolorc, timeformatc, weatherapikeyc, weathercityidc, weatherrefreshtimec, defaultunitsc]
   var k;
   for (k = 0 ; k < options.length ; k++){
     options[k] = optionsc[k]
@@ -72,13 +71,6 @@ function LoadClockSettings(){
 
 /* Save clock settings */
 function SaveClockSettings(){
-  var foregroundcolor = document.getElementById('foregroundcolor').value;
-  var backgroundcolor = document.getElementById('backgroundcolor').value;
-  var timeformat = document.getElementById('timeformat').value;
-  var weatherapikey = document.getElementById('weatherapikey').value;
-  var weathercityid = document.getElementById('weathercityid').value;
-  var weatherrefreshtime = document.getElementById('weatherrefreshtime').value;
-  var defaultunits = document.getElementById('defaultunits').value;
   setCookie("com.reinhart.display.clock.foregroundcolor",foregroundcolor,730);
   setCookie("com.reinhart.display.clock.backgroundcolor",backgroundcolor,730);
   setCookie("com.reinhart.display.timeformat",timeformat,730);
@@ -86,7 +78,7 @@ function SaveClockSettings(){
   setCookie("com.reinhart.display.weather.weathercityid",weathercityid,730);
   setCookie("com.reinhart.display.weather.weatherrefreshtime",weatherrefreshtime,730);
   setCookie("com.reinhart.display.defaultunits",defaultunits,730);
-  ApplyClockSettings();
+  document.refresh();
 };
 
 var homecpanel = "<a onClick=\"ClockSettings('clockbody')\"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick='screenfull.toggle()'><i class='icon ion-ios-qr-scanner'></i> Fullscreen</a>";

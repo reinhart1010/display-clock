@@ -4,7 +4,7 @@ function setCookie(cname, cvalue, exdays) {
     d.setTime(d.getTime() + (exdays*24*60*60*1000 ));
     var expires = "expires="+ d.toUTCString();
     document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
-};
+}
 
 /* Main function to call cookies */
 function getCookie(cname){
@@ -15,8 +15,8 @@ function getCookie(cname){
 			cvalue = carray[i].match ( cname + '=(.*)' );
 			if (cvalue != null) {
 				return decodeURIComponent ( cvalue[1] ) ;
-			};
-		};
-	};
+			}
+		}
+	}
 	return '' ;
-};
+}

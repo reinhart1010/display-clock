@@ -19,23 +19,23 @@ function StartClock(){
   LoadClockSettings();
   UpdateClock();
   UpdateWeather();
-};
+}
 
 function GetHourFormat(){
   if(timeformatcf == "24h"){
     return moment().format('HH:mm');
   } else if(timeformatcf == "12h"){
     return moment().format('hh:mm');
-  };
-};
+  }
+}
 
 function GetAmPmFormat(){
   if(timeformatcf == "24h"){
     return '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;';
   } else if(timeformatcf == "12h"){
     return moment().format('a');
-  };
-};
+  }
+}
 
 /* Update clock values */
 function UpdateClock(){
@@ -45,7 +45,7 @@ function UpdateClock(){
   document.getElementById('amtext').innerHTML = GetAmPmFormat();
   UpdateCurrentTime();
   setTimeout(UpdateClock, 500);
-};
+}
 
 /* Apply clock settings */
 function ApplyClockSettings(){
@@ -53,21 +53,21 @@ function ApplyClockSettings(){
   var clockbodycolor = document.getElementById('clockbody').style.color;
   if(foregroundcolorc != null){
     clockbodycolor = foregroundcolorc;
-  } else {clockbodycolor = "#fff"};
+  } else {clockbodycolor = "#fff"}
   if(backgroundcolorc != null){
     clockbodybackground = backgroundcolorc;
-  } else {clockbodybackground = "#000"};
-};
+  } else {clockbodybackground = "#000"}
+}
 
 /* Load clock settings */
 function LoadClockSettings(){
-  var options = [foregroundcolor, backgroundcolor, timeformat, weatherapikey, weathercityid, weatherrefreshtime, defaultunits]
-  var optionsc = [foregroundcolorc, backgroundcolorc, timeformatc, weatherapikeyc, weathercityidc, weatherrefreshtimec, defaultunitsc]
+  var options = [foregroundcolor, backgroundcolor, timeformat, weatherapikey, weathercityid, weatherrefreshtime, defaultunits];
+  var optionsc = [foregroundcolorc, backgroundcolorc, timeformatc, weatherapikeyc, weathercityidc, weatherrefreshtimec, defaultunitsc];
   var k;
   for (k = 0 ; k < options.length ; k++){
-    options[k] = optionsc[k]
-  };
-};
+    options[k] = optionsc[k];
+  }
+}
 
 /* Save clock settings */
 function SaveClockSettings(){
@@ -79,7 +79,7 @@ function SaveClockSettings(){
   setCookie("com.reinhart.display.weather.weatherrefreshtime",weatherrefreshtime,730);
   setCookie("com.reinhart.display.defaultunits",defaultunits,730);
   document.refresh();
-};
+}
 
 var homecpanel = "<a onClick=\"ClockSettings('clockbody')\"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick='screenfull.toggle()'><i class='icon ion-ios-qr-scanner'></i> Fullscreen</a>";
 var settingscpanel = "<a onClick=\"ClockHome('clocksettings')\"><i class='icon ion-ios-arrow-back'></i> Back</a> | <a onClick=\"ClockAbout('clocksettings')\"><i class='icon ion-ios-information-circle-outline'></i> About</a>";
@@ -88,17 +88,17 @@ var aboutcpanel = "<a onClick=\"ClockSettings('clockabout')\"><i class='icon ion
 function ClockHome(hideid){
   TogglePage(hideid,"clockbody");
   document.getElementById('controlpanel').innerHTML = homecpanel;
-  document.getElementById("title").innerHTML = "Clock"
-};
+  document.getElementById("title").innerHTML = "Clock";
+}
 
 function ClockSettings(hideid){
   TogglePage(hideid,"clocksettings");
   document.getElementById('controlpanel').innerHTML = settingscpanel;
-  document.getElementById("title").innerHTML = "Settings"
-};
+  document.getElementById("title").innerHTML = "Settings";
+}
 
 function ClockAbout(hideid){
   TogglePage(hideid,"clockabout");
   document.getElementById('controlpanel').innerHTML = aboutcpanel;
-  document.getElementById("title").innerHTML = "About"
-};
+  document.getElementById("title").innerHTML = "About";
+}

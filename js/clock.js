@@ -5,6 +5,7 @@ var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
 var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
 var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
 var defaultunitsc = getCookie("com.reinhart.display.defaultunits");
+var timeformatcf = GetTimeFormat();
 var foregroundcolor = document.getElementById('foregroundcolor').value;
 var backgroundcolor = document.getElementById('backgroundcolor').value;
 var weatherapikey = document.getElementById('weatherapikey').value;
@@ -38,7 +39,6 @@ function GetAmPmFormat(){
 
 /* Update clock values */
 function UpdateClock(){
-  var timeformatcf = GetTimeFormat();
   document.getElementById('date').innerHTML = moment().format('ddd, MMMM Do YYYY');
   document.getElementById('secondclock').innerHTML = moment().format('ss');
   document.getElementById('largeclock').innerHTML = GetHourFormat();

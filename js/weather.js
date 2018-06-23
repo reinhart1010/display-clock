@@ -17,7 +17,7 @@ function UpdateWeather(){
   //req.open("GET", "assets/testscript/openweathermap-apitest-1.json", true); //Sample API
   req.overrideMimeType("application/json");
   req.send(null);
-  if(weatherrefreshtimec != 0){
+  if(weatherrefreshtimec != "0"){
     setTimeout(UpdateWeather, weatherrefreshtimec);
   } else {
     return 0;
@@ -26,9 +26,9 @@ function UpdateWeather(){
 
 /* Determine weather unit symbol */
 function FindTemperatureSymbol(){
-  if (defaultunitsc = "imperial"){
+  if (defaultunitsc == "imperial"){
     return "&deg;F";
-  } else if (defaultunitsc = "metric"){
+  } else if (defaultunitsc == "metric"){
     return "&deg;C";
   } else {return "K";};
 };

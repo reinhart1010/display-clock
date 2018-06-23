@@ -1,7 +1,7 @@
 var timeformatc = getCookie("com.reinhart.display.timeformat");
 
 function GetTimeFormat(){
-  if (timeformatc = ""){
+  if (timeformatc == ""){
     return "12h";
   } else {
     return timeformatc
@@ -9,10 +9,10 @@ function GetTimeFormat(){
 };
 
 function UpdateCurrentTime(){
-  if(timeformatcf = "24h"){
-    document.getElementById('currenttime').innerHTML = moment().format('hh:mm') + " <span id='currenttime-ampm'>" + moment().format('a') + "</span>";
-  } else if(timeformatcf = "12h"){
+  if(timeformatcf == "24h"){
     document.getElementById('currenttime').innerHTML = moment().format('HH:mm');
+  } else if(timeformatcf == "12h"){
+    document.getElementById('currenttime').innerHTML = moment().format('hh:mm') + " <span id='currenttime-ampm'>" + moment().format('a') + "</span>";
   };
   setTimeout(UpdateCurrentTime, 500);
 };

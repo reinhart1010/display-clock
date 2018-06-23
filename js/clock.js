@@ -11,8 +11,6 @@ var weatherapikey = document.getElementById('weatherapikey').value;
 var weathercityid = document.getElementById('weathercityid').value;
 var weatherrefreshtime = document.getElementById('weatherrefreshtime').value;
 var defaultunits = document.getElementById('defaultunits').value;
-var options = [foregroundcolor, backgroundcolor, timeformat, weatherapikey, weathercityid, weatherrefreshtime, defaultunits]
-var optionsc = [foregroundcolorc, backgroundcolorc, timeformatc, weatherapikeyc, weathercityidc, weatherrefreshtimec, defaultunitsc]
 
 /* Clock start script */
 function StartClock(){
@@ -63,6 +61,8 @@ function ApplyClockSettings(){
 
 /* Load clock settings */
 function LoadClockSettings(){
+  var options = [foregroundcolor, backgroundcolor, timeformat, weatherapikey, weathercityid, weatherrefreshtime, defaultunits]
+  var optionsc = [foregroundcolorc, backgroundcolorc, timeformatc, weatherapikeyc, weathercityidc, weatherrefreshtimec, defaultunitsc]
   var k;
   for (k = 0 ; k < options.length ; k++){
     options[k] = optionsc[k]

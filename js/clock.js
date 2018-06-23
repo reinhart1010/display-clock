@@ -16,7 +16,7 @@ var optionsc = [foregroundcolorc, backgroundcolorc, timeformatc, weatherapikeyc,
 
 /* Clock start script */
 function StartClock(){
-  ApplyClockSettings();
+  //ApplyClockSettings();
   LoadClockSettings();
   UpdateClock();
   UpdateWeather();

@@ -21,9 +21,9 @@ function GetHourFormat(){
 
 function GetAmPmFormat(){
   if(timeformatcf = "24h"){
-    return moment().format('a');
-  } else if(timeformatcf = "12h"){
     return '&nbsp;&nbsp;&nbsp;&nbsp;';
+  } else if(timeformatcf = "12h"){
+    return moment().format('a');
   };
 };
 

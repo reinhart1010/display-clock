@@ -1,11 +1,7 @@
-/* Define variables from cookies */
+function UpdateWeather(){
 var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
 var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
 var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
-var defaultunitsc = getCookie("com.reinhart.display.defaultunits")
-
-/* Request JSON file from OpenWeatherMap API */
-function UpdateWeather(){
   var req = new XMLHttpRequest();
   req.onreadystatechange = function(){
     if (this.readyState == 4 && this.status == 200){
@@ -26,6 +22,7 @@ function UpdateWeather(){
 
 /* Determine weather unit symbol */
 function FindTemperatureSymbol(){
+  var defaultunitsc = getCookie("com.reinhart.display.defaultunits");
   if (defaultunitsc == "imperial"){
     return "&deg;F";
   } else if (defaultunitsc == "metric"){

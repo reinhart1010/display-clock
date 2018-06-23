@@ -1,7 +1,7 @@
 var timeformatc = getCookie("com.reinhart.display.timeformat");
 
 function GetTimeFormat(){
-  if (username = ""){
+  if (timeformatc = ""){
     return "12h";
   } else {
     return timeformatc

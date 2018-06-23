@@ -1,10 +1,9 @@
-/* Define variables from cookies, functions and IDs */
-var foregroundcolorc = getCookie("com.reinhart.display.clock.foregroundcolor");
-var backgroundcolorc = getCookie("com.reinhart.display.clock.backgroundcolor");
-var timeformatcf = GetTimeFormat();
 
 /* Clock start script */
 function StartClock(){
+  var foregroundcolorc = getCookie("com.reinhart.display.clock.foregroundcolor");
+  var backgroundcolorc = getCookie("com.reinhart.display.clock.backgroundcolor");
+  var timeformatcf = GetTimeFormat();
   ApplyClockSettings();
   LoadClockSettings();
   UpdateClock();

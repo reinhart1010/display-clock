@@ -7,8 +7,16 @@ function setCookie(cname, cvalue, exdays) {
 };
 
 /* Main function to call cookies */
-function getCookie(cname) {
-  var re = new RegExp(cname + "=([^;]+)");
-  var value = re.exec(document.cookie);
-  return (value != null) ? unescape(value[1]) : null;
+function GetCookie(cname){
+	var cstring = document.cookie ;
+	if (cstring.length != 0) {
+		var carray = cstring.split( '; ' );
+		for (i = 0 ; i < carray.length ; i++) {
+			cvalue = carray[i].match ( cname + '=(.*)' );
+			if (cvalue != null) {
+				return decodeURIComponent ( cvalue[1] ) ;
+			};
+		};
+	};
+	return '' ;
 };

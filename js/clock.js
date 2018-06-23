@@ -41,7 +41,7 @@ function GetAmPmFormat(){
 
 /* Update clock values */
 function UpdateClock(){
-  document.getElementById('date').innerHTML = moment().format('dddd, MMMM Do YYYY');
+  document.getElementById('date').innerHTML = moment().format('ddd, MMMM Do YYYY');
   document.getElementById('secondclock').innerHTML = moment().format('ss');
   document.getElementById('largeclock').innerHTML = GetHourFormat();
   document.getElementById('amtext').innerHTML = GetAmPmFormat();

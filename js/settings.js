@@ -7,7 +7,7 @@ function setCookie(cname, cvalue, exdays) {
 };
 
 /* Main function to call cookies */
-function GetCookie(cname){
+function getCookie(cname){
 	var cstring = document.cookie ;
 	if (cstring.length != 0) {
 		var carray = cstring.split( '; ' );

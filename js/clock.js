@@ -1,7 +1,6 @@
 /* Define variables from cookies and IDs */
 var foregroundcolorc = getCookie("com.reinhart.display.clock.foregroundcolor");
 var backgroundcolorc = getCookie("com.reinhart.display.clock.backgroundcolor");
-var timeformatcf = GetTimeFormat();
 var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
 var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
 var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
@@ -41,6 +40,7 @@ function GetAmPmFormat(){
 
 /* Update clock values */
 function UpdateClock(){
+  var timeformatcf = GetTimeFormat();
   document.getElementById('date').innerHTML = moment().format('ddd, MMMM Do YYYY');
   document.getElementById('secondclock').innerHTML = moment().format('ss');
   document.getElementById('largeclock').innerHTML = GetHourFormat();

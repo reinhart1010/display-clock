@@ -1,7 +1,18 @@
-/* Define variables from cookies */
+/* Define variables from cookies and IDs */
 var foregroundcolorc = getCookie("com.reinhart.display.clock.foregroundcolor");
 var backgroundcolorc = getCookie("com.reinhart.display.clock.backgroundcolor");
 var timeformatcf = GetTimeFormat();
+var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
+var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
+var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
+var defaultunitsc = getCookie("com.reinhart.display.defaultunits");
+var foregroundcolor = document.getElementById('foregroundcolor').value;
+var backgroundcolor = document.getElementById('backgroundcolor').value;
+var timeformat = document.getElementById('timeformat').value;
+var weatherapikey = document.getElementById('weatherapikey').value;
+var weathercityid = document.getElementById('weathercityid').value;
+var weatherrefreshtime = document.getElementById('weatherrefreshtime').value;
+var defaultunits = document.getElementById('defaultunits').value;
 
 /* Clock start script */
 function StartClock(){
@@ -51,21 +62,16 @@ function ApplyClockSettings(){
 
 /* Load clock settings */
 function LoadClockSettings(){
-  var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
-  var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
-  var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
-  var defaultunitsc = getCookie("com.reinhart.display.defaultunits")
+  var options = [foregroundcolor, backgroundcolor, timeformat, weatherapikey, weathercityid, weatherrefreshtime, defaultunits]
+  var optionsc = [foregroundcolorc, backgroundcolorc, timeformatc, weatherapikeyc, weathercityidc, weatherrefreshtimec, defaultunitsc]
+  var k;
+  for (k = 0 ; k < options.length ; k++){
+    options[k] = optionsc[k];
+  };
 };
 
 /* Save clock settings */
 function SaveClockSettings(){
-  var foregroundcolor = document.getElementById('foregroundcolor').value;
-  var backgroundcolor = document.getElementById('backgroundcolor').value;
-  var timeformat = document.getElementById('timeformat').value;
-  var weatherapikey = document.getElementById('weatherapikey').value;
-  var weathercityid = document.getElementById('weathercityid').value;
-  var weatherrefreshtime = document.getElementById('weatherrefreshtime').value;
-  var defaultunits = document.getElementById('defaultunits').value;
   setCookie("com.reinhart.display.clock.foregroundcolor",foregroundcolor,730);
   setCookie("com.reinhart.display.clock.backgroundcolor",backgroundcolor,730);
   setCookie("com.reinhart.display.timeformat",timeformat,730);

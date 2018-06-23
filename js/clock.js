@@ -76,7 +76,7 @@ function SaveClockSettings(){
   ApplyClockSettings();
 };
 
-var homecpanel = "<a onClick=\"ClockSettings('clockhome')\"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick='screenfull.toggle()'><i class='icon ion-ios-qr-scanner'></i> Fullscreen</a>";
+var homecpanel = "<a onClick=\"ClockSettings('clockbody')\"><i class='icon ion-ios-settings'></i> Settings</a> | <a onClick='screenfull.toggle()'><i class='icon ion-ios-qr-scanner'></i> Fullscreen</a>";
 var settingscpanel = "<a onClick=\"ClockHome('clocksettings')\"><i class='icon ion-ios-arrow-back'></i> Back</a> | <a onClick=\"ClockAbout('clocksettings')\"><i class='icon ion-ios-information-circle-outline'></i> About</a>";
 var aboutcpanel = "<a onClick=\"ClockSettings('clockabout')\"><i class='icon ion-ios-arrow-back'></i> Back</a>";
 

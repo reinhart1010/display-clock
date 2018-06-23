@@ -12,7 +12,7 @@ View Demo: [GitHub](https://reinhart1010.github.io/display-clock/) | [GitLab](ht
 - [x] Save settings as cookies
 - [x] Simple clock layout
 - [x] Time format (12h or 24h) support
-- [ ] Weather (by [OpenWeatherMap](https://www.openweathermap.org))
+- [x] Weather (by [OpenWeatherMap](https://www.openweathermap.org))
 
 ## Permissions
 

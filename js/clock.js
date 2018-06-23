@@ -12,17 +12,17 @@ function StartClock(){
 };
 
 function GetHourFormat(){
-  if(timeformatcf = "24h"){
-    return moment().format('hh:mm');
-  } else if(timeformatcf = "12h"){
+  if(timeformatcf == "24h"){
     return moment().format('HH:mm');
+  } else if(timeformatcf == "12h"){
+    return moment().format('hh:mm');
   };
 };
 
 function GetAmPmFormat(){
-  if(timeformatcf = "24h"){
+  if(timeformatcf == "24h"){
     return '&nbsp;&nbsp;&nbsp;&nbsp;';
-  } else if(timeformatcf = "12h"){
+  } else if(timeformatcf == "12h"){
     return moment().format('a');
   };
 };

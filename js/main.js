@@ -1,4 +1,8 @@
-var timeformatc = getCookie("com.reinhart.display.timeformat");
+var timeformatc = "24h";
+if (getCookie("com.reinhart.display.clock") != ""){
+  var data = JSON.parse(getCookie("com.reinhart.display.clock"));
+  timeformatc = data.clock.timeFormat;
+}
 
 function GetTimeFormat(){
   if (timeformatc === ""){
@@ -9,9 +13,9 @@ function GetTimeFormat(){
 }
 
 function UpdateCurrentTime(){
-  if(timeformatcf == "24h"){
+  if(timeformatc == "24h"){
     document.getElementById('currenttime').innerHTML = moment().format('HH:mm');
-  } else if(timeformatcf == "12h"){
+  } else if(timeformatc == "12h"){
     document.getElementById('currenttime').innerHTML = moment().format('hh:mm') + " <span id='currenttime-ampm'>" + moment().format('a') + "</span>";
   }
   setTimeout(UpdateCurrentTime, 500);

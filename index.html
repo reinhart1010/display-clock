@@ -22,8 +22,8 @@
     <script src="js/moment.js"></script>
     <script src="js/screenfull.js"></script>
     <script src="js/settings.js"></script>
-    <script src="js/main.js"></script>
     <script src="js/clock.js"></script>
+    <script src="js/main.js"></script>
   </head>
   <body onLoad="StartClock()">
     <div id="header">
@@ -48,9 +48,9 @@
         <h1><i class="icon ion-md-time"></i> Clock and Time</h1>
         <h2>Clock Style</h2>
         <label for="foregroundcolor">Foreground Color:</label>
-        <input type="color" name="foregroundcolor" id="foregroundcolor" value="#fff"><br>
+        <input type="color" name="foregroundcolor" id="foregroundcolor" value="#ffffff"><br>
         <label for="backgroundcolor">Background Color:</label>
-        <input type="color" name="backgroundcolor" id="backgroundcolor" value="#000"><br>
+        <input type="color" name="backgroundcolor" id="backgroundcolor" value="#000000"><br>
         <p>We recommend using <b>hexadecimal, rgb or hsl</b> color values (e.g. <code>#6200EE</code>, <code>rgb(98, 0, 238)</code> or <code>hsl(265, 100%, 47%)</code>).</p>
         <h2>Time Format</h2>
         <label for="timeformat">Time Format</label>
@@ -84,14 +84,13 @@
           <option value="metric">Metric: Celcius, meter/second</option>
           <option value="imperial">Imperial: Fahrenheit, miles/hour</option>
         </select><br>
-        <input type="button" onClick="SaveClockSettings()" value="Save"><br>
         <p>This webapp uses web browser cookies to store and load your settings across Reinhart websites, which we do not deliver to any third parties.<br>While we currently have not implemented our Cookie Policy for this webapp yet, you may evaluate our source code on <a href="https://github.com/reinhart1010/display-clock">GitHub</a> and <a href="https://gitlab.com/reinhart1010/display-clock">GitLab</a> to ensure the fairness of our cookie usage.</p>
       </form>
     </div>
     <div id="clockabout">
       <h1>Clock</h1>
-      <h2>Version 0.5</h2>
-      <b>Copyright &copy; 2018 Reinhart Previano Koentjoro</b>
+      <h2>Version 1.0</h2>
+      <b>Copyright &copy; 2018-2019 Reinhart Previano Koentjoro</b>
       <p>View Source Code on <a href="https://github.com/reinhart1010/display-clock">GitHub</a> | <a href="https://gitlab.com/reinhart1010/display-clock">GitLab</a></p>
       <p>This project is freely available under the MIT License.</p>
       <p><input type="button" onClick="CurrentURL()" value="Reveal App Host URL"></p>

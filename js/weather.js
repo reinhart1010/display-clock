@@ -1,22 +1,25 @@
 function UpdateWeather(){
-var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
-var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
-var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
-  var req = new XMLHttpRequest();
-  req.onreadystatechange = function(){
-    if (this.readyState == 4 && this.status == 200){
-      var jsonData = JSON.parse(this.responseText);
-      ParseWeather(jsonData);
+  // var weatherapikeyc = getCookie("com.reinhart.display.weather.weatherapikey");
+  // var weathercityidc = getCookie("com.reinhart.display.weather.weathercityid");
+  // var weatherrefreshtimec = getCookie("com.reinhart.display.weather.weatherrefreshtime") * 60 * 1000;
+
+  if(weatherapikeyc && weathercityidc && weatherrefreshtimec){
+    var req = new XMLHttpRequest();
+    req.onreadystatechange = function(){
+      if (this.readyState == 4 && this.status == 200){
+        var jsonData = JSON.parse(this.responseText);
+        ParseWeather(jsonData);
+      }
+    };
+    req.open("GET", "https://api.openweathermap.org/data/2.5/weather?id=" + weathercityidc + "&APPID=" + weatherapikeyc + "&units=" + defaultunitsc, true);
+    //req.open("GET", "assets/testscript/openweathermap-apitest-1.json", true); //Sample API
+    req.overrideMimeType("application/json");
+    req.send(null);
+    if(weatherrefreshtimec != "0"){
+      setTimeout(UpdateWeather, weatherrefreshtimec);
+    } else {
+      return 0;
     }
-  };
-  req.open("GET", "https://api.openweathermap.org/data/2.5/weather?id=" + weathercityidc + "&APPID=" + weatherapikeyc + "&units=" + defaultunitsc, true);
-  //req.open("GET", "assets/testscript/openweathermap-apitest-1.json", true); //Sample API
-  req.overrideMimeType("application/json");
-  req.send(null);
-  if(weatherrefreshtimec != "0"){
-    setTimeout(UpdateWeather, weatherrefreshtimec);
-  } else {
-    return 0;
   }
 }
 
